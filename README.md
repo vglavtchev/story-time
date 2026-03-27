@@ -31,6 +31,12 @@ Original photos are handled under strict rules: see [GUARDRAILS.md](./GUARDRAILS
 - **Next:** Stronger consistency, reading levels, regenerate-one-page, saved projects.
 - **Then:** Tablet app, optional offline; deeper “immersion” (motion, audio) only after the reading experience is solid.
 
+## Quick prototype (static book)
+
+The folder **`prototype/`** is a self-contained HTML book: generic cartoon characters (**Alex**, 7, and **Maya**, 11), skateboarding + ice cream story, inline SVG art, prev/next navigation (and arrow keys). **Print → Save as PDF** exports all spreads.
+
+Open `prototype/index.html` in a browser (or serve the folder with any static server).
+
 ## Docs
 
 | Doc | Contents |

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>story-time prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,700&family=Nunito:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="chrome">
+      <div>
+        <h1>The Sweetest Roll</h1>
+        <p class="chrome-meta">Prototype · generic characters · HTML / print to PDF</p>
+      </div>
+      <nav class="nav-controls" aria-label="Page turns">
+        <button type="button" id="btn-prev">← Prev</button>
+        <span id="page-indicator" aria-live="polite">1 / 8</span>
+        <button type="button" id="btn-next">Next →</button>
+      </nav>
+    </header>
+
+    <main id="book">
+      <!-- 1 Cover -->
+      <section
+        class="spread cover-spread is-active"
+        data-title="The Sweetest Roll"
+        data-spread="0"
+        aria-hidden="false"
+      >
+        <div class="art" role="img" aria-label="Cartoon skate park at sunset with two kids">
+          <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#38bdf8" />
+                <stop offset="55%" stop-color="#fde68a" />
+                <stop offset="100%" stop-color="#fb923c" />
+              </linearGradient>
+            </defs>
+            <rect width="800" height="600" fill="url(#sky)" />
+            <ellipse cx="400" cy="520" rx="360" ry="80" fill="#94a3b8" opacity="0.35" />
+            <path
+              d="M80 420 Q400 280 720 420 L720 520 L80 520 Z"
+              fill="#64748b"
+              opacity="0.5"
+            />
+            <rect x="60" y="380" width="680" height="24" rx="8" fill="#475569" />
+            <!-- Girl taller -->
+            <g transform="translate(280 300)">
+              <ellipse cx="40" cy="120" rx="35" ry="12" fill="#334155" />
+              <rect x="10" y="40" width="60" height="85" rx="12" fill="#e11d48" />
+              <rect x="18" y="115" width="18" height="50" rx="6" fill="#1e3a5f" />
+              <rect x="44" y="115" width="18" height="50" rx="6" fill="#1e3a5f" />
+              <circle cx="40" cy="25" r="22" fill="#fecdd3" />
+              <path d="M22 15 Q40 5 58 15" fill="none" stroke="#1e293b" stroke-width="8" stroke-linecap="round" />
+              <rect x="22" y="8" width="36" height="22" rx="10" fill="#f43f5e" />
+              <rect x="28" y="18" width="24" height="8" rx="2" fill="#fff" opacity="0.5" />
+            </g>
+            <!-- Boy shorter -->
+            <g transform="translate(420 340)">
+              <ellipse cx="35" cy="105" rx="32" ry="10" fill="#334155" />
+              <rect x="8" y="35" width="54" height="72" rx="10" fill="#2563eb" />
+              <rect x="12" y="100" width="16" height="42" rx="5" fill="#1e3a5f" />
+              <rect x="42" y="100" width="16" height="42" rx="5" fill="#1e3a5f" />
+              <circle cx="35" cy="18" r="20" fill="#fdba74" />
+              <rect x="18" y="2" width="34" height="20" rx="10" fill="#f97316" />
+              <rect x="24" y="10" width="22" height="8" rx="2" fill="#fff" opacity="0.45" />
+            </g>
+            <text
+              x="400"
+              y="120"
+              text-anchor="middle"
+              font-family="Georgia, serif"
+              font-size="52"
+              font-weight="700"
+              fill="#0f172a"
+            >
+              The Sweetest Roll
+            </text>
+            <text
+              x="400"
+              y="175"
+              text-anchor="middle"
+              font-family="Nunito, sans-serif"
+              font-size="22"
+              font-weight="700"
+              fill="#1e293b"
+            >
+              A story about Alex &amp; Maya
+            </text>
+          </svg>
+        </div>
+        <div class="copy">
+          <h2>The Sweetest Roll</h2>
+          <p>
+            Alex is seven. Maya is eleven. They both love skateboarding—and ice cream.
+          </p>
+          <p class="tagline">Turn the page →</p>
+        </div>
+      </section>
+
+      <!-- 2 Meet -->
+      <section class="spread" data-title="Meet Alex & Maya" data-spread="1" aria-hidden="true">
+        <div class="art" role="img" aria-label="Two kids with skateboards by a garage">
+          <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+            <rect width="800" height="600" fill="#fef9c3" />
+            <rect x="0" y="0" width="800" height="180" fill="#86efac" opacity="0.35" />
+            <rect x="480" y="80" width="220" height="200" rx="8" fill="#cbd5e1" />
+            <rect x="500" y="110" width="80" height="60" rx="4" fill="#bae6fd" />
+            <text x="520" y="200" font-family="sans-serif" font-size="14" fill="#64748b">HOME</text>
+            <!-- Maya -->
+            <g transform="translate(180 220)">
+              <rect x="0" y="80" width="140" height="16" rx="4" fill="#475569" />
+              <rect x="30" y="0" width="50" height="140" rx="10" fill="#e11d48" />
+              <rect x="38" y="130" width="16" height="60" rx="5" fill="#1e3a5f" />
+              <rect x="68" y="130" width="16" height="60" rx="5" fill="#1e3a5f" />
+              <circle cx="55" cy="35" r="28" fill="#fecdd3" />
+              <ellipse cx="55" cy="8" rx="26" ry="14" fill="#f43f5e" />
+              <rect x="100" y="100" width="12" height="90" rx="4" fill="#78716c" transform="rotate(15 106 145)" />
+              <ellipse cx="120" cy="210" rx="45" ry="12" fill="#334155" />
+            </g>
+            <!-- Alex -->
+            <g transform="translate(380 280)">
+              <rect x="0" y="60" width="120" height="14" rx="4" fill="#475569" />
+              <rect x="25" y="0" width="46" height="75" rx="9" fill="#2563eb" />
+              <rect x="30" y="70" width="14" height="48" rx="4" fill="#1e3a5f" />
+              <rect x="52" y="70" width="14" height="48" rx="4" fill="#1e3a5f" />
+              <circle cx="48" cy="22" r="22" fill="#fdba74" />
+              <rect x="30" y="5" width="36" height="18" rx="9" fill="#f97316" />
+              <rect x="85" y="85" width="10" height="75" rx="3" fill="#78716c" transform="rotate(-12 90 120)" />
+              <ellipse cx="105" cy="175" rx="38" ry="10" fill="#334155" />
+            </g>
+            <text x="400" y="520" text-anchor="middle" font-family="Nunito, sans-serif" font-size="20" font-weight="700" fill="#0f172a">
+              Maya packs patience. Alex packs stickers for his helmet.
+            </text>
+          </svg>
+        </div>
+        <div class="copy">
+          <h2>Meet Alex and Maya</h2>
+          <p>
+            Maya is eleven: she can carve a curve like she’s writing her name in chalk. Alex is
+            seven: his wheels still wiggle when he gets excited—which is always.
+          </p>
+        </div>
+      </section>
+
+      <!-- 3 Plan -->
+      <section class="spread" data-title="The Plan" data-spread="2" aria-hidden="true">
+        <div class="art" role="img" aria-label="Ice cream truck in the distance, kids pointing">
+          <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+            <rect width="800" height="600" fill="#bae6fd" />
+            <circle cx="650" cy="90" r="55" fill="#fde047" opacity="0.9" />
+            <rect x="0" y="380" width="800" height="220" fill="#94a3b8" />
+            <rect x="520" y="260" width="200" height="140" rx="12" fill="#f472b6" />
+            <rect x="530" y="320" width="180" height="40" rx="6" fill="#fff" />
+            <text x="540" y="348" font-family="sans-serif" font-size="18" font-weight="700" fill="#be185d">ICE CREAM</text>
+            <circle cx="560" cy="410" r="22" fill="#1e293b" />
+            <circle cx="660" cy="410" r="22" fill="#1e293b" />
+            <!-- kids -->
+            <g transform="translate(200 300)">
+              <g>
+                <circle cx="40" cy="30" r="24" fill="#fecdd3" />
+                <rect x="15" y="50" width="50" height="70" rx="10" fill="#e11d48" />
+                <rect x="20" y="115" width="14" height="45" rx="4" fill="#1e3a5f" />
+                <rect x="46" y="115" width="14" height="45" rx="4" fill="#1e3a5f" />
+                <path d="M90 20 L130 0" stroke="#0f172a" stroke-width="4" fill="none" />
+              </g>
+              <g transform="translate(120 40)">
+                <circle cx="35" cy="25" r="20" fill="#fdba74" />
+                <rect x="10" y="42" width="50" height="62" rx="8" fill="#2563eb" />
+                <rect x="14" y="98" width="13" height="40" rx="4" fill="#1e3a5f" />
+                <rect x="43" y="98" width="13" height="40" rx="4" fill="#1e3a5f" />
+                <path d="M80 30 L115 5" stroke="#0f172a" stroke-width="4" fill="none" />
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="copy">
+          <h2>The plan</h2>
+          <p>
+            “Tricks first,” Maya says, snapping on her helmet. “Ice cream after—double scoop if you
+            land the roll.” Alex’s eyes go wide. Skateboarding <em>and</em> ice cream? That’s a
+            holiday on wheels.
+          </p>
+        </div>
+      </section>
+
+      <!-- 4 Park -->
+      <section class="spread" data-title="The Park" data-spread="3" aria-hidden="true">
+        <div class="art" role="img" aria-label="Skate park with ramps and two helmeted kids">
+          <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+            <rect width="800" height="600" fill="#cffafe" />
+            <rect x="0" y="400" width="800" height="200" fill="#94a3b8" />
+            <path d="M100 400 Q400 200 700 400" fill="none" stroke="#64748b" stroke-width="16" />
+            <rect x="120" y="360" width="560" height="20" rx="6" fill="#475569" />
+            <!-- Maya skating -->
+            <g transform="translate(480 260)">
+              <ellipse cx="40" cy="130" rx="38" ry="10" fill="#334155" />
+              <rect x="10" y="40" width="60" height="78" rx="10" fill="#e11d48" />
+              <rect x="18" y="110" width="16" height="48" rx="5" fill="#1e3a5f" />
+              <rect x="46" y="110" width="16" height="48" rx="5" fill="#1e3a5f" />
+              <circle cx="40" cy="22" r="22" fill="#fecdd3" />
+              <rect x="22" y="4" width="36" height="20" rx="10" fill="#f43f5e" />
+              <rect x="28" y="12" width="24" height="8" rx="2" fill="#fff" opacity="0.45" />
+            </g>
+            <!-- Alex -->
+            <g transform="translate(220 300)">
+              <ellipse cx="35" cy="115" rx="34" ry="9" fill="#334155" />
+              <rect x="8" y="38" width="54" height="70" rx="9" fill="#2563eb" />
+              <rect x="14" y="100" width="14" height="46" rx="4" fill="#1e3a5f" />
+              <rect x="42" y="100" width="14" height="46" rx="4" fill="#1e3a5f" />
+              <circle cx="35" cy="20" r="20" fill="#fdba74" />
+              <rect x="18" y="4" width="34" height="18" rx="9" fill="#f97316" />
+              <rect x="24" y="10" width="22" height="8" rx="2" fill="#fff" opacity="0.45" />
+            </g>
+          </svg>
+        </div>
+        <div class="copy">
+          <h2>The park hums</h2>
+          <p>
+            Wheels buzz like summer bees. Maya warms up with smooth lines—knees soft, shoulders
+            brave. Alex follows, pretending the cracks in the pavement are tiny bridges he has to
+            clear for treasure.
+          </p>
+        </div>
+      </section>
+
+      <!-- 5 Lesson -->
+      <section class="spread" data-title="The Lesson" data-spread="4" aria-hidden="true">
+        <div class="art" role="img" aria-label="Older sister demonstrating a move to younger brother">
+          <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+            <rect width="800" height="600" fill="#e0f2fe" />
+            <rect x="0" y="420" width="800" height="180" fill="#94a3b8" />
+            <!-- Maya mid pose -->
+            <g transform="translate(380 200)">
+              <ellipse cx="50" cy="200" rx="42" ry="11" fill="#334155" />
+              <rect x="15" y="60" width="70" height="90" rx="12" fill="#e11d48" transform="rotate(-8 50 105)" />
+              <rect x="25" y="140" width="18" height="55" rx="6" fill="#1e3a5f" />
+              <rect x="55" y="140" width="18" height="55" rx="6" fill="#1e3a5f" />
+              <circle cx="50" cy="30" r="26" fill="#fecdd3" />
+              <rect x="28" y="8" width="44" height="24" rx="12" fill="#f43f5e" />
+              <path d="M-10 80 Q-40 40 -20 20" stroke="#fecdd3" stroke-width="10" fill="none" stroke-linecap="round" />
+              <path d="M110 90 Q140 50 120 30" stroke="#fecdd3" stroke-width="10" fill="none" stroke-linecap="round" />
+            </g>
+            <!-- Alex watching -->
+            <g transform="translate(120 320)">
+              <ellipse cx="40" cy="105" rx="34" ry="10" fill="#334155" />
+              <rect x="10" y="35" width="60" height="72" rx="10" fill="#2563eb" />
+              <circle cx="40" cy="18" r="22" fill="#fdba74" />
+              <rect x="22" y="2" width="36" height="20" rx="10" fill="#f97316" />
+              <ellipse cx="75" cy="25" rx="8" ry="6" fill="#1e293b" />
+              <ellipse cx="82" cy="23" rx="8" ry="6" fill="#1e293b" />
+            </g>
+            <text x="400" y="480" text-anchor="middle" font-family="Nunito" font-size="18" font-weight="700" fill="#0f172a">
+              “Bend like you’re scooping ice cream,” Maya laughs.
+            </text>
+          </svg>
+        </div>
+        <div class="copy">
+          <h2>Big-sister physics</h2>
+          <p>
+            Maya shows the roll: shoulders square, hips patient, a little speed like a spoon of
+            melted sugar. Alex nods so hard his helmet almost becomes a maraca.
+          </p>
+        </div>
+      </section>
+
+      <!-- 6 Wobble -->
+      <section class="spread" data-title="The Wobble" data-spread="5" aria-hidden="true">
+        <div class="art" role="img" aria-label="Boy wobbling on skateboard, sister reaching to help">
+          <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+            <rect width="800" height="600" fill="#fef3c7" />
+            <rect x="0" y="430" width="800" height="170" fill="#94a3b8" />
+            <!-- Alex tilted -->
+            <g transform="translate(280 260) rotate(-12 40 100)">
+              <ellipse cx="40" cy="130" rx="36" ry="10" fill="#334155" />
+              <rect x="8" y="45" width="64" height="78" rx="10" fill="#2563eb" />
+              <circle cx="40" cy="25" r="22" fill="#fdba74" />
+              <rect x="22" y="8" width="36" height="20" rx="10" fill="#f97316" />
+              <path d="M28 34 Q40 28 52 34" fill="none" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round" />
+            </g>
+            <!-- Maya steadying -->
+            <g transform="translate(420 240)">
+              <rect x="0" y="50" width="60" height="85" rx="10" fill="#e11d48" />
+              <circle cx="30" cy="25" r="22" fill="#fecdd3" />
+              <rect x="10" y="6" width="40" height="22" rx="10" fill="#f43f5e" />
+              <path d="M-30 70 L-5 85" stroke="#fecdd3" stroke-width="12" stroke-linecap="round" />
+            </g>
+            <text x="400" y="520" text-anchor="middle" font-family="Nunito" font-size="20" font-weight="800" fill="#c2410c">
+              W O B B L E
+            </text>
+          </svg>
+        </div>
+        <div class="copy">
+          <h2>The wobble is honest</h2>
+          <p>
+            Alex tries. The board argues. His arms do a funny dance that is not, technically, part
+            of the trick. Maya doesn’t tease—she steadies him with one hand and hope with the other.
+          </p>
+        </div>
+      </section>
+
+      <!-- 7 Success -->
+      <section class="spread" data-title="The Roll" data-spread="6" aria-hidden="true">
+        <div class="art" role="img" aria-label="Two kids cheering at the skate park">
+          <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+            <rect width="800" height="600" fill="#dbeafe" />
+            <rect x="0" y="400" width="800" height="200" fill="#94a3b8" />
+            <path d="M50 420 L750 420" stroke="#cbd5e1" stroke-width="4" stroke-dasharray="12 12" />
+            <g transform="translate(240 240)">
+              <ellipse cx="50" cy="150" rx="40" ry="11" fill="#334155" />
+              <rect x="15" y="50" width="70" height="82" rx="11" fill="#e11d48" />
+              <circle cx="50" cy="28" r="24" fill="#fecdd3" />
+              <rect x="28" y="8" width="44" height="22" rx="11" fill="#f43f5e" />
+              <path d="M0 60 L-25 30" stroke="#fecdd3" stroke-width="14" stroke-linecap="round" />
+              <path d="M100 60 L125 25" stroke="#fecdd3" stroke-width="14" stroke-linecap="round" />
+            </g>
+            <g transform="translate(420 280)">
+              <ellipse cx="38" cy="125" rx="36" ry="10" fill="#334155" />
+              <rect x="8" y="42" width="60" height="76" rx="10" fill="#2563eb" />
+              <circle cx="38" cy="22" r="21" fill="#fdba74" />
+              <rect x="20" y="6" width="36" height="20" rx="10" fill="#f97316" />
+              <path d="M-5 55 L-30 35" stroke="#fdba74" stroke-width="12" stroke-linecap="round" />
+              <path d="M80 55 L105 30" stroke="#fdba74" stroke-width="12" stroke-linecap="round" />
+            </g>
+            <text x="400" y="120" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="36" fill="#15803d">
+              He rolls!
+            </text>
+          </svg>
+        </div>
+        <div class="copy">
+          <h2>The sweetest roll</h2>
+          <p>
+            Then—click—the world lines up. Alex rolls through the wobble like it’s just weather.
+            Maya whoops so loud the pigeons consult their schedules. The park claps, even the
+            cracks in the pavement.
+          </p>
+        </div>
+      </section>
+
+      <!-- 8 Ice cream -->
+      <section class="spread" data-title="Ice Cream" data-spread="7" aria-hidden="true">
+        <div class="art" role="img" aria-label="Two kids with ice cream cones on a bench">
+          <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+            <rect width="800" height="600" fill="#fce7f3" />
+            <rect x="100" y="380" width="600" height="24" rx="8" fill="#78350f" />
+            <rect x="120" y="320" width="560" height="70" rx="10" fill="#92400e" />
+            <!-- Maya -->
+            <g transform="translate(200 200)">
+              <rect x="20" y="80" width="70" height="90" rx="12" fill="#e11d48" />
+              <circle cx="55" cy="45" r="26" fill="#fecdd3" />
+              <rect x="35" y="18" width="40" height="24" rx="12" fill="#f43f5e" />
+              <rect x="50" y="160" width="18" height="70" rx="6" fill="#1e3a5f" />
+              <rect x="80" y="160" width="18" height="70" rx="6" fill="#1e3a5f" />
+              <!-- cone -->
+              <path d="M100 120 L115 170 L85 170 Z" fill="#d97706" />
+              <ellipse cx="100" cy="118" rx="18" ry="10" fill="#fef08a" />
+              <ellipse cx="100" cy="108" rx="16" ry="8" fill="#f9a8d4" />
+            </g>
+            <!-- Alex -->
+            <g transform="translate(420 230)">
+              <rect x="10" y="70" width="62" height="82" rx="10" fill="#2563eb" />
+              <circle cx="41" cy="38" r="24" fill="#fdba74" />
+              <rect x="22" y="16" width="38" height="22" rx="11" fill="#f97316" />
+              <rect x="18" y="145" width="16" height="62" rx="5" fill="#1e3a5f" />
+              <rect x="48" y="145" width="16" height="62" rx="5" fill="#1e3a5f" />
+              <path d="M85 110 L100 165 L70 165 Z" fill="#d97706" />
+              <ellipse cx="85" cy="108" rx="16" ry="9" fill="#fef08a" />
+              <ellipse cx="85" cy="98" rx="14" ry="7" fill="#93c5fd" />
+            </g>
+            <text x="400" y="540" text-anchor="middle" font-family="Nunito" font-size="20" font-weight="700" fill="#831843">
+              Double scoop. Double grin.
+            </text>
+          </svg>
+        </div>
+        <div class="copy">
+          <h2>Ice cream, at last</h2>
+          <p>
+            The truck plays a tiny song that tastes like summer. Maya chooses strawberry-swirl
+            bravery; Alex picks blue moon because the sky should be a flavor. Sticky fingers, loud
+            laughter—proof that the best tricks end with sprinkles.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <p class="hint">
+      Tip: use <kbd>←</kbd> <kbd>→</kbd> keys. For PDF: <kbd>⌘</kbd>+<kbd>P</kbd> → Save as PDF.
+    </p>
+
+    <footer class="prototype-foot">
+      story-time prototype · generic characters (not from photos) · see repo GUARDRAILS.md for product rules
+    </footer>
+
+    <script src="book.js"></script>
+  </body>
+</html>
