@@ -33,7 +33,7 @@ Original photos are handled under strict rules: see [GUARDRAILS.md](./GUARDRAILS
 
 ## Quick prototype (static book)
 
-The folder **`prototype/`** is a self-contained HTML book: generic cartoon characters (**Alex**, 7, and **Maya**, 11), skateboarding + ice cream story, inline SVG art, prev/next navigation (and arrow keys). **Print → Save as PDF** exports all spreads.
+The folder **`prototype/`** is a self-contained HTML book: generic cartoon characters (**Alex**, 7, and **Maya**, 11), skateboarding + ice cream story, **6 spreads** of storybook-style inline SVG art, prev/next navigation (and arrow keys). **Print → Save as PDF** exports all spreads.
 
 Open `prototype/index.html` in a browser (or serve the folder with any static server).
 
