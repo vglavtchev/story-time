@@ -6,397 +6,239 @@
     <title>story-time prototype</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,700&family=Nunito:wght@600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="chrome">
       <div>
         <h1>The Sweetest Roll</h1>
-        <p class="chrome-meta">Prototype · generic characters · HTML / print to PDF</p>
+        <p class="chrome-meta">Prototype · storybook illustration pass · HTML / print to PDF</p>
       </div>
       <nav class="nav-controls" aria-label="Page turns">
         <button type="button" id="btn-prev">← Prev</button>
-        <span id="page-indicator" aria-live="polite">1 / 8</span>
+        <span id="page-indicator" aria-live="polite">1 / 6</span>
         <button type="button" id="btn-next">Next →</button>
       </nav>
     </header>
 
     <main id="book">
-      <!-- 1 Cover -->
-      <section
-        class="spread cover-spread is-active"
-        data-title="The Sweetest Roll"
-        data-spread="0"
-        aria-hidden="false"
-      >
-        <div class="art" role="img" aria-label="Cartoon skate park at sunset with two kids">
+      <section class="spread cover-spread is-active" data-title="The Sweetest Roll" aria-hidden="false">
+        <div class="art" role="img" aria-label="storybook skate park at sunset with Alex and Maya">
           <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#38bdf8" />
-                <stop offset="55%" stop-color="#fde68a" />
-                <stop offset="100%" stop-color="#fb923c" />
-              </linearGradient>
+              <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7dd3fc"/><stop offset="0.55" stop-color="#fde68a"/><stop offset="1" stop-color="#fdba74"/></linearGradient>
+              <linearGradient id="ramp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#94a3b8"/><stop offset="1" stop-color="#64748b"/></linearGradient>
             </defs>
-            <rect width="800" height="600" fill="url(#sky)" />
-            <ellipse cx="400" cy="520" rx="360" ry="80" fill="#94a3b8" opacity="0.35" />
-            <path
-              d="M80 420 Q400 280 720 420 L720 520 L80 520 Z"
-              fill="#64748b"
-              opacity="0.5"
-            />
-            <rect x="60" y="380" width="680" height="24" rx="8" fill="#475569" />
-            <!-- Girl taller -->
-            <g transform="translate(280 300)">
-              <ellipse cx="40" cy="120" rx="35" ry="12" fill="#334155" />
-              <rect x="10" y="40" width="60" height="85" rx="12" fill="#e11d48" />
-              <rect x="18" y="115" width="18" height="50" rx="6" fill="#1e3a5f" />
-              <rect x="44" y="115" width="18" height="50" rx="6" fill="#1e3a5f" />
-              <circle cx="40" cy="25" r="22" fill="#fecdd3" />
-              <path d="M22 15 Q40 5 58 15" fill="none" stroke="#1e293b" stroke-width="8" stroke-linecap="round" />
-              <rect x="22" y="8" width="36" height="22" rx="10" fill="#f43f5e" />
-              <rect x="28" y="18" width="24" height="8" rx="2" fill="#fff" opacity="0.5" />
+            <rect width="800" height="600" fill="url(#sky1)"/>
+            <circle cx="120" cy="110" r="48" fill="#fff7ed" opacity="0.7"/>
+            <circle cx="690" cy="90" r="58" fill="#fde047" opacity="0.85"/>
+            <path d="M0 425 C180 360 350 360 520 420 C650 465 730 460 800 440 L800 600 L0 600 Z" fill="url(#ramp)"/>
+            <path d="M80 405 C240 330 390 335 560 390" stroke="#475569" stroke-width="18" fill="none"/>
+
+            <g transform="translate(250 270)">
+              <ellipse cx="64" cy="182" rx="54" ry="16" fill="#334155" opacity="0.35"/>
+              <path d="M44 70 Q64 52 86 72 L86 145 Q64 157 42 145 Z" fill="#e11d48" stroke="#7f1d1d" stroke-width="2.5"/>
+              <path d="M47 142 L47 192 M79 142 L79 192" stroke="#1e3a8a" stroke-width="13"/>
+              <circle cx="64" cy="40" r="28" fill="#fecdd3"/>
+              <path d="M36 24 Q64 5 92 24" stroke="#be185d" stroke-width="10" fill="none"/>
+              <ellipse cx="54" cy="42" rx="3" ry="4" fill="#1f2937"/><ellipse cx="74" cy="42" rx="3" ry="4" fill="#1f2937"/>
+              <path d="M54 56 Q64 64 75 56" stroke="#be123c" stroke-width="2.5" fill="none"/>
             </g>
-            <!-- Boy shorter -->
-            <g transform="translate(420 340)">
-              <ellipse cx="35" cy="105" rx="32" ry="10" fill="#334155" />
-              <rect x="8" y="35" width="54" height="72" rx="10" fill="#2563eb" />
-              <rect x="12" y="100" width="16" height="42" rx="5" fill="#1e3a5f" />
-              <rect x="42" y="100" width="16" height="42" rx="5" fill="#1e3a5f" />
-              <circle cx="35" cy="18" r="20" fill="#fdba74" />
-              <rect x="18" y="2" width="34" height="20" rx="10" fill="#f97316" />
-              <rect x="24" y="10" width="22" height="8" rx="2" fill="#fff" opacity="0.45" />
+
+            <g transform="translate(430 305)">
+              <ellipse cx="52" cy="150" rx="46" ry="13" fill="#334155" opacity="0.35"/>
+              <path d="M34 58 Q52 45 72 58 L72 128 Q52 140 34 128 Z" fill="#2563eb" stroke="#1e3a8a" stroke-width="2.5"/>
+              <path d="M36 124 L36 165 M67 124 L67 165" stroke="#1e3a8a" stroke-width="12"/>
+              <circle cx="52" cy="33" r="24" fill="#fdba74"/>
+              <path d="M30 20 Q52 8 74 20" stroke="#ea580c" stroke-width="9" fill="none"/>
+              <ellipse cx="44" cy="34" rx="3" ry="4" fill="#1f2937"/><ellipse cx="60" cy="34" rx="3" ry="4" fill="#1f2937"/>
+              <path d="M43 47 Q52 53 62 47" stroke="#9a3412" stroke-width="2.5" fill="none"/>
             </g>
-            <text
-              x="400"
-              y="120"
-              text-anchor="middle"
-              font-family="Georgia, serif"
-              font-size="52"
-              font-weight="700"
-              fill="#0f172a"
-            >
-              The Sweetest Roll
-            </text>
-            <text
-              x="400"
-              y="175"
-              text-anchor="middle"
-              font-family="Nunito, sans-serif"
-              font-size="22"
-              font-weight="700"
-              fill="#1e293b"
-            >
-              A story about Alex &amp; Maya
-            </text>
+
+            <text x="400" y="120" text-anchor="middle" font-family="Fraunces, serif" font-size="56" fill="#0f172a">The Sweetest Roll</text>
+            <text x="400" y="164" text-anchor="middle" font-family="Nunito, sans-serif" font-size="24" font-weight="700" fill="#1e293b">A story about Alex (7) and Maya (11)</text>
           </svg>
         </div>
         <div class="copy">
           <h2>The Sweetest Roll</h2>
-          <p>
-            Alex is seven. Maya is eleven. They both love skateboarding—and ice cream.
-          </p>
+          <p>Alex is seven. Maya is eleven. They both love skateboarding and eating ice cream.</p>
           <p class="tagline">Turn the page →</p>
         </div>
       </section>
 
-      <!-- 2 Meet -->
-      <section class="spread" data-title="Meet Alex & Maya" data-spread="1" aria-hidden="true">
-        <div class="art" role="img" aria-label="Two kids with skateboards by a garage">
+      <section class="spread" data-title="Meet Alex and Maya" aria-hidden="true">
+        <div class="art" role="img" aria-label="Alex and Maya getting ready at the skate park">
           <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-            <rect width="800" height="600" fill="#fef9c3" />
-            <rect x="0" y="0" width="800" height="180" fill="#86efac" opacity="0.35" />
-            <rect x="480" y="80" width="220" height="200" rx="8" fill="#cbd5e1" />
-            <rect x="500" y="110" width="80" height="60" rx="4" fill="#bae6fd" />
-            <text x="520" y="200" font-family="sans-serif" font-size="14" fill="#64748b">HOME</text>
-            <!-- Maya -->
-            <g transform="translate(180 220)">
-              <rect x="0" y="80" width="140" height="16" rx="4" fill="#475569" />
-              <rect x="30" y="0" width="50" height="140" rx="10" fill="#e11d48" />
-              <rect x="38" y="130" width="16" height="60" rx="5" fill="#1e3a5f" />
-              <rect x="68" y="130" width="16" height="60" rx="5" fill="#1e3a5f" />
-              <circle cx="55" cy="35" r="28" fill="#fecdd3" />
-              <ellipse cx="55" cy="8" rx="26" ry="14" fill="#f43f5e" />
-              <rect x="100" y="100" width="12" height="90" rx="4" fill="#78716c" transform="rotate(15 106 145)" />
-              <ellipse cx="120" cy="210" rx="45" ry="12" fill="#334155" />
+            <defs>
+              <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9f99d"/><stop offset="1" stop-color="#bae6fd"/></linearGradient>
+            </defs>
+            <rect width="800" height="600" fill="url(#bg2)"/>
+            <path d="M0 455 C140 430 255 390 390 420 C520 445 650 445 800 425 L800 600 L0 600 Z" fill="#94a3b8"/>
+            <circle cx="130" cy="150" r="42" fill="#fff" opacity="0.6"/>
+            <circle cx="185" cy="140" r="30" fill="#fff" opacity="0.6"/>
+            <rect x="540" y="200" width="190" height="130" rx="18" fill="#fbcfe8" stroke="#be185d" stroke-width="3"/>
+            <text x="635" y="275" text-anchor="middle" font-family="Nunito" font-size="22" font-weight="800" fill="#9d174d">SKATE CLUB</text>
+
+            <g transform="translate(190 248)">
+              <ellipse cx="64" cy="185" rx="56" ry="15" fill="#334155" opacity="0.3"/>
+              <path d="M42 68 Q62 55 84 68 L84 145 Q62 160 40 145 Z" fill="#e11d48" stroke="#7f1d1d" stroke-width="2.5"/>
+              <path d="M45 143 L45 192 M77 143 L77 192" stroke="#1e3a8a" stroke-width="13"/>
+              <circle cx="62" cy="40" r="28" fill="#fecdd3"/>
+              <path d="M34 24 Q62 6 90 24" stroke="#be185d" stroke-width="10" fill="none"/>
+              <rect x="98" y="104" width="70" height="12" rx="6" fill="#0f172a"/>
+              <circle cx="111" cy="121" r="7" fill="#334155"/><circle cx="153" cy="121" r="7" fill="#334155"/>
             </g>
-            <!-- Alex -->
-            <g transform="translate(380 280)">
-              <rect x="0" y="60" width="120" height="14" rx="4" fill="#475569" />
-              <rect x="25" y="0" width="46" height="75" rx="9" fill="#2563eb" />
-              <rect x="30" y="70" width="14" height="48" rx="4" fill="#1e3a5f" />
-              <rect x="52" y="70" width="14" height="48" rx="4" fill="#1e3a5f" />
-              <circle cx="48" cy="22" r="22" fill="#fdba74" />
-              <rect x="30" y="5" width="36" height="18" rx="9" fill="#f97316" />
-              <rect x="85" y="85" width="10" height="75" rx="3" fill="#78716c" transform="rotate(-12 90 120)" />
-              <ellipse cx="105" cy="175" rx="38" ry="10" fill="#334155" />
+
+            <g transform="translate(410 292)">
+              <ellipse cx="52" cy="148" rx="46" ry="13" fill="#334155" opacity="0.3"/>
+              <path d="M34 57 Q52 44 72 57 L72 126 Q52 138 34 126 Z" fill="#2563eb" stroke="#1e3a8a" stroke-width="2.5"/>
+              <path d="M36 123 L36 163 M67 123 L67 163" stroke="#1e3a8a" stroke-width="12"/>
+              <circle cx="52" cy="33" r="24" fill="#fdba74"/>
+              <path d="M30 20 Q52 7 74 20" stroke="#ea580c" stroke-width="9" fill="none"/>
+              <rect x="84" y="95" width="65" height="11" rx="5" fill="#0f172a"/>
+              <circle cx="95" cy="111" r="6.5" fill="#334155"/><circle cx="136" cy="111" r="6.5" fill="#334155"/>
             </g>
-            <text x="400" y="520" text-anchor="middle" font-family="Nunito, sans-serif" font-size="20" font-weight="700" fill="#0f172a">
-              Maya packs patience. Alex packs stickers for his helmet.
-            </text>
           </svg>
         </div>
         <div class="copy">
           <h2>Meet Alex and Maya</h2>
-          <p>
-            Maya is eleven: she can carve a curve like she’s writing her name in chalk. Alex is
-            seven: his wheels still wiggle when he gets excited—which is always.
-          </p>
+          <p>Maya is eleven and smooth on every curve. Alex is seven and full of brave wobbles.</p>
         </div>
       </section>
 
-      <!-- 3 Plan -->
-      <section class="spread" data-title="The Plan" data-spread="2" aria-hidden="true">
-        <div class="art" role="img" aria-label="Ice cream truck in the distance, kids pointing">
+      <section class="spread" data-title="Tricks First" aria-hidden="true">
+        <div class="art" role="img" aria-label="Kids spot an ice cream truck while practicing tricks">
           <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-            <rect width="800" height="600" fill="#bae6fd" />
-            <circle cx="650" cy="90" r="55" fill="#fde047" opacity="0.9" />
-            <rect x="0" y="380" width="800" height="220" fill="#94a3b8" />
-            <rect x="520" y="260" width="200" height="140" rx="12" fill="#f472b6" />
-            <rect x="530" y="320" width="180" height="40" rx="6" fill="#fff" />
-            <text x="540" y="348" font-family="sans-serif" font-size="18" font-weight="700" fill="#be185d">ICE CREAM</text>
-            <circle cx="560" cy="410" r="22" fill="#1e293b" />
-            <circle cx="660" cy="410" r="22" fill="#1e293b" />
-            <!-- kids -->
-            <g transform="translate(200 300)">
-              <g>
-                <circle cx="40" cy="30" r="24" fill="#fecdd3" />
-                <rect x="15" y="50" width="50" height="70" rx="10" fill="#e11d48" />
-                <rect x="20" y="115" width="14" height="45" rx="4" fill="#1e3a5f" />
-                <rect x="46" y="115" width="14" height="45" rx="4" fill="#1e3a5f" />
-                <path d="M90 20 L130 0" stroke="#0f172a" stroke-width="4" fill="none" />
-              </g>
-              <g transform="translate(120 40)">
-                <circle cx="35" cy="25" r="20" fill="#fdba74" />
-                <rect x="10" y="42" width="50" height="62" rx="8" fill="#2563eb" />
-                <rect x="14" y="98" width="13" height="40" rx="4" fill="#1e3a5f" />
-                <rect x="43" y="98" width="13" height="40" rx="4" fill="#1e3a5f" />
-                <path d="M80 30 L115 5" stroke="#0f172a" stroke-width="4" fill="none" />
-              </g>
+            <defs><linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfdbfe"/><stop offset="1" stop-color="#fde68a"/></linearGradient></defs>
+            <rect width="800" height="600" fill="url(#bg3)"/>
+            <rect x="0" y="430" width="800" height="170" fill="#94a3b8"/>
+            <rect x="520" y="260" width="220" height="130" rx="20" fill="#f9a8d4" stroke="#be185d" stroke-width="4"/>
+            <rect x="540" y="300" width="120" height="48" rx="10" fill="#fff1f2"/>
+            <text x="600" y="330" text-anchor="middle" font-family="Nunito" font-size="18" font-weight="800" fill="#be185d">ICE CREAM</text>
+            <circle cx="560" cy="395" r="24" fill="#1f2937"/><circle cx="680" cy="395" r="24" fill="#1f2937"/>
+
+            <g transform="translate(210 290)">
+              <circle cx="55" cy="40" r="26" fill="#fecdd3"/>
+              <path d="M33 24 Q55 10 78 24" stroke="#be185d" stroke-width="9" fill="none"/>
+              <path d="M35 66 Q56 52 78 66 L78 140 Q56 152 35 140 Z" fill="#e11d48" stroke="#7f1d1d" stroke-width="2.5"/>
+              <path d="M83 78 L133 50" stroke="#334155" stroke-width="7"/>
+            </g>
+
+            <g transform="translate(340 340)">
+              <circle cx="47" cy="30" r="23" fill="#fdba74"/>
+              <path d="M27 18 Q47 6 67 18" stroke="#ea580c" stroke-width="8" fill="none"/>
+              <path d="M31 53 Q47 42 65 53 L65 116 Q47 126 31 116 Z" fill="#2563eb" stroke="#1e3a8a" stroke-width="2.5"/>
+              <path d="M72 72 L118 44" stroke="#334155" stroke-width="6.5"/>
             </g>
           </svg>
         </div>
         <div class="copy">
-          <h2>The plan</h2>
-          <p>
-            “Tricks first,” Maya says, snapping on her helmet. “Ice cream after—double scoop if you
-            land the roll.” Alex’s eyes go wide. Skateboarding <em>and</em> ice cream? That’s a
-            holiday on wheels.
-          </p>
+          <h2>Tricks first, scoops second</h2>
+          <p>"Land the roll," Maya says, "and we celebrate with double scoops." Alex grins so hard his helmet tilts.</p>
         </div>
       </section>
 
-      <!-- 4 Park -->
-      <section class="spread" data-title="The Park" data-spread="3" aria-hidden="true">
-        <div class="art" role="img" aria-label="Skate park with ramps and two helmeted kids">
+      <section class="spread" data-title="The Wobble" aria-hidden="true">
+        <div class="art" role="img" aria-label="Alex wobbles while Maya helps">
           <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-            <rect width="800" height="600" fill="#cffafe" />
-            <rect x="0" y="400" width="800" height="200" fill="#94a3b8" />
-            <path d="M100 400 Q400 200 700 400" fill="none" stroke="#64748b" stroke-width="16" />
-            <rect x="120" y="360" width="560" height="20" rx="6" fill="#475569" />
-            <!-- Maya skating -->
-            <g transform="translate(480 260)">
-              <ellipse cx="40" cy="130" rx="38" ry="10" fill="#334155" />
-              <rect x="10" y="40" width="60" height="78" rx="10" fill="#e11d48" />
-              <rect x="18" y="110" width="16" height="48" rx="5" fill="#1e3a5f" />
-              <rect x="46" y="110" width="16" height="48" rx="5" fill="#1e3a5f" />
-              <circle cx="40" cy="22" r="22" fill="#fecdd3" />
-              <rect x="22" y="4" width="36" height="20" rx="10" fill="#f43f5e" />
-              <rect x="28" y="12" width="24" height="8" rx="2" fill="#fff" opacity="0.45" />
+            <defs><linearGradient id="bg4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0f2fe"/><stop offset="1" stop-color="#fef3c7"/></linearGradient></defs>
+            <rect width="800" height="600" fill="url(#bg4)"/>
+            <path d="M0 455 C210 410 360 410 540 450 C650 474 730 474 800 460 L800 600 L0 600 Z" fill="#9ca3af"/>
+            <path d="M120 410 C230 330 370 335 515 410" stroke="#64748b" stroke-width="17" fill="none"/>
+
+            <g transform="translate(300 265) rotate(-11 50 90)">
+              <ellipse cx="50" cy="175" rx="47" ry="14" fill="#334155" opacity="0.28"/>
+              <circle cx="50" cy="38" r="25" fill="#fdba74"/>
+              <path d="M30 25 Q50 12 70 25" stroke="#ea580c" stroke-width="9" fill="none"/>
+              <path d="M30 62 Q49 49 70 62 L70 138 Q49 149 30 138 Z" fill="#2563eb" stroke="#1e3a8a" stroke-width="2.5"/>
+              <path d="M42 50 Q50 45 58 50" stroke="#1f2937" stroke-width="2.5" fill="none"/>
+              <path d="M36 147 L36 192 M64 147 L64 192" stroke="#1e3a8a" stroke-width="12"/>
             </g>
-            <!-- Alex -->
-            <g transform="translate(220 300)">
-              <ellipse cx="35" cy="115" rx="34" ry="9" fill="#334155" />
-              <rect x="8" y="38" width="54" height="70" rx="9" fill="#2563eb" />
-              <rect x="14" y="100" width="14" height="46" rx="4" fill="#1e3a5f" />
-              <rect x="42" y="100" width="14" height="46" rx="4" fill="#1e3a5f" />
-              <circle cx="35" cy="20" r="20" fill="#fdba74" />
-              <rect x="18" y="4" width="34" height="18" rx="9" fill="#f97316" />
-              <rect x="24" y="10" width="22" height="8" rx="2" fill="#fff" opacity="0.45" />
+
+            <g transform="translate(455 250)">
+              <circle cx="58" cy="42" r="28" fill="#fecdd3"/>
+              <path d="M32 24 Q58 8 87 24" stroke="#be185d" stroke-width="10" fill="none"/>
+              <path d="M35 72 Q58 56 83 72 L83 150 Q58 166 35 150 Z" fill="#e11d48" stroke="#7f1d1d" stroke-width="2.5"/>
+              <path d="M19 90 L-26 106" stroke="#fecdd3" stroke-width="11"/>
+              <path d="M44 151 L44 201 M75 151 L75 201" stroke="#1e3a8a" stroke-width="13"/>
             </g>
           </svg>
         </div>
         <div class="copy">
-          <h2>The park hums</h2>
-          <p>
-            Wheels buzz like summer bees. Maya warms up with smooth lines—knees soft, shoulders
-            brave. Alex follows, pretending the cracks in the pavement are tiny bridges he has to
-            clear for treasure.
-          </p>
+          <h2>The wobble</h2>
+          <p>Alex leans. The board argues. Maya reaches out with one hand and says, "Again. You are closer than you think."</p>
         </div>
       </section>
 
-      <!-- 5 Lesson -->
-      <section class="spread" data-title="The Lesson" data-spread="4" aria-hidden="true">
-        <div class="art" role="img" aria-label="Older sister demonstrating a move to younger brother">
+      <section class="spread" data-title="The Roll" aria-hidden="true">
+        <div class="art" role="img" aria-label="Alex lands the roll and both cheer">
           <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-            <rect width="800" height="600" fill="#e0f2fe" />
-            <rect x="0" y="420" width="800" height="180" fill="#94a3b8" />
-            <!-- Maya mid pose -->
-            <g transform="translate(380 200)">
-              <ellipse cx="50" cy="200" rx="42" ry="11" fill="#334155" />
-              <rect x="15" y="60" width="70" height="90" rx="12" fill="#e11d48" transform="rotate(-8 50 105)" />
-              <rect x="25" y="140" width="18" height="55" rx="6" fill="#1e3a5f" />
-              <rect x="55" y="140" width="18" height="55" rx="6" fill="#1e3a5f" />
-              <circle cx="50" cy="30" r="26" fill="#fecdd3" />
-              <rect x="28" y="8" width="44" height="24" rx="12" fill="#f43f5e" />
-              <path d="M-10 80 Q-40 40 -20 20" stroke="#fecdd3" stroke-width="10" fill="none" stroke-linecap="round" />
-              <path d="M110 90 Q140 50 120 30" stroke="#fecdd3" stroke-width="10" fill="none" stroke-linecap="round" />
-            </g>
-            <!-- Alex watching -->
-            <g transform="translate(120 320)">
-              <ellipse cx="40" cy="105" rx="34" ry="10" fill="#334155" />
-              <rect x="10" y="35" width="60" height="72" rx="10" fill="#2563eb" />
-              <circle cx="40" cy="18" r="22" fill="#fdba74" />
-              <rect x="22" y="2" width="36" height="20" rx="10" fill="#f97316" />
-              <ellipse cx="75" cy="25" rx="8" ry="6" fill="#1e293b" />
-              <ellipse cx="82" cy="23" rx="8" ry="6" fill="#1e293b" />
-            </g>
-            <text x="400" y="480" text-anchor="middle" font-family="Nunito" font-size="18" font-weight="700" fill="#0f172a">
-              “Bend like you’re scooping ice cream,” Maya laughs.
-            </text>
-          </svg>
-        </div>
-        <div class="copy">
-          <h2>Big-sister physics</h2>
-          <p>
-            Maya shows the roll: shoulders square, hips patient, a little speed like a spoon of
-            melted sugar. Alex nods so hard his helmet almost becomes a maraca.
-          </p>
-        </div>
-      </section>
+            <defs><linearGradient id="bg5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dbeafe"/><stop offset="1" stop-color="#bbf7d0"/></linearGradient></defs>
+            <rect width="800" height="600" fill="url(#bg5)"/>
+            <rect x="0" y="430" width="800" height="170" fill="#94a3b8"/>
+            <path d="M70 420 L730 420" stroke="#e2e8f0" stroke-width="4" stroke-dasharray="12 10"/>
+            <text x="400" y="110" text-anchor="middle" font-family="Fraunces" font-size="46" fill="#15803d">He rolls!</text>
 
-      <!-- 6 Wobble -->
-      <section class="spread" data-title="The Wobble" data-spread="5" aria-hidden="true">
-        <div class="art" role="img" aria-label="Boy wobbling on skateboard, sister reaching to help">
-          <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-            <rect width="800" height="600" fill="#fef3c7" />
-            <rect x="0" y="430" width="800" height="170" fill="#94a3b8" />
-            <!-- Alex tilted -->
-            <g transform="translate(280 260) rotate(-12 40 100)">
-              <ellipse cx="40" cy="130" rx="36" ry="10" fill="#334155" />
-              <rect x="8" y="45" width="64" height="78" rx="10" fill="#2563eb" />
-              <circle cx="40" cy="25" r="22" fill="#fdba74" />
-              <rect x="22" y="8" width="36" height="20" rx="10" fill="#f97316" />
-              <path d="M28 34 Q40 28 52 34" fill="none" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round" />
+            <g transform="translate(230 248)">
+              <circle cx="58" cy="42" r="28" fill="#fecdd3"/>
+              <path d="M32 24 Q58 8 87 24" stroke="#be185d" stroke-width="10" fill="none"/>
+              <path d="M35 72 Q58 56 83 72 L83 150 Q58 166 35 150 Z" fill="#e11d48" stroke="#7f1d1d" stroke-width="2.5"/>
+              <path d="M18 86 L-20 58 M98 86 L137 54" stroke="#fecdd3" stroke-width="11"/>
             </g>
-            <!-- Maya steadying -->
-            <g transform="translate(420 240)">
-              <rect x="0" y="50" width="60" height="85" rx="10" fill="#e11d48" />
-              <circle cx="30" cy="25" r="22" fill="#fecdd3" />
-              <rect x="10" y="6" width="40" height="22" rx="10" fill="#f43f5e" />
-              <path d="M-30 70 L-5 85" stroke="#fecdd3" stroke-width="12" stroke-linecap="round" />
-            </g>
-            <text x="400" y="520" text-anchor="middle" font-family="Nunito" font-size="20" font-weight="800" fill="#c2410c">
-              W O B B L E
-            </text>
-          </svg>
-        </div>
-        <div class="copy">
-          <h2>The wobble is honest</h2>
-          <p>
-            Alex tries. The board argues. His arms do a funny dance that is not, technically, part
-            of the trick. Maya doesn’t tease—she steadies him with one hand and hope with the other.
-          </p>
-        </div>
-      </section>
 
-      <!-- 7 Success -->
-      <section class="spread" data-title="The Roll" data-spread="6" aria-hidden="true">
-        <div class="art" role="img" aria-label="Two kids cheering at the skate park">
-          <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-            <rect width="800" height="600" fill="#dbeafe" />
-            <rect x="0" y="400" width="800" height="200" fill="#94a3b8" />
-            <path d="M50 420 L750 420" stroke="#cbd5e1" stroke-width="4" stroke-dasharray="12 12" />
-            <g transform="translate(240 240)">
-              <ellipse cx="50" cy="150" rx="40" ry="11" fill="#334155" />
-              <rect x="15" y="50" width="70" height="82" rx="11" fill="#e11d48" />
-              <circle cx="50" cy="28" r="24" fill="#fecdd3" />
-              <rect x="28" y="8" width="44" height="22" rx="11" fill="#f43f5e" />
-              <path d="M0 60 L-25 30" stroke="#fecdd3" stroke-width="14" stroke-linecap="round" />
-              <path d="M100 60 L125 25" stroke="#fecdd3" stroke-width="14" stroke-linecap="round" />
+            <g transform="translate(430 290)">
+              <ellipse cx="48" cy="140" rx="46" ry="13" fill="#334155" opacity="0.35"/>
+              <circle cx="48" cy="30" r="23" fill="#fdba74"/>
+              <path d="M29 18 Q48 7 68 18" stroke="#ea580c" stroke-width="8" fill="none"/>
+              <path d="M31 54 Q48 42 66 54 L66 123 Q48 134 31 123 Z" fill="#2563eb" stroke="#1e3a8a" stroke-width="2.5"/>
+              <path d="M16 68 L-15 44 M80 68 L111 44" stroke="#fdba74" stroke-width="11"/>
             </g>
-            <g transform="translate(420 280)">
-              <ellipse cx="38" cy="125" rx="36" ry="10" fill="#334155" />
-              <rect x="8" y="42" width="60" height="76" rx="10" fill="#2563eb" />
-              <circle cx="38" cy="22" r="21" fill="#fdba74" />
-              <rect x="20" y="6" width="36" height="20" rx="10" fill="#f97316" />
-              <path d="M-5 55 L-30 35" stroke="#fdba74" stroke-width="12" stroke-linecap="round" />
-              <path d="M80 55 L105 30" stroke="#fdba74" stroke-width="12" stroke-linecap="round" />
-            </g>
-            <text x="400" y="120" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="36" fill="#15803d">
-              He rolls!
-            </text>
           </svg>
         </div>
         <div class="copy">
           <h2>The sweetest roll</h2>
-          <p>
-            Then—click—the world lines up. Alex rolls through the wobble like it’s just weather.
-            Maya whoops so loud the pigeons consult their schedules. The park claps, even the
-            cracks in the pavement.
-          </p>
+          <p>Alex glides through the wobble like it was only weather. Maya cheers. Even the pavement seems to clap.</p>
         </div>
       </section>
 
-      <!-- 8 Ice cream -->
-      <section class="spread" data-title="Ice Cream" data-spread="7" aria-hidden="true">
-        <div class="art" role="img" aria-label="Two kids with ice cream cones on a bench">
+      <section class="spread" data-title="Double Scoop" aria-hidden="true">
+        <div class="art" role="img" aria-label="Alex and Maya eating ice cream on a park bench">
           <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-            <rect width="800" height="600" fill="#fce7f3" />
-            <rect x="100" y="380" width="600" height="24" rx="8" fill="#78350f" />
-            <rect x="120" y="320" width="560" height="70" rx="10" fill="#92400e" />
-            <!-- Maya -->
-            <g transform="translate(200 200)">
-              <rect x="20" y="80" width="70" height="90" rx="12" fill="#e11d48" />
-              <circle cx="55" cy="45" r="26" fill="#fecdd3" />
-              <rect x="35" y="18" width="40" height="24" rx="12" fill="#f43f5e" />
-              <rect x="50" y="160" width="18" height="70" rx="6" fill="#1e3a5f" />
-              <rect x="80" y="160" width="18" height="70" rx="6" fill="#1e3a5f" />
-              <!-- cone -->
-              <path d="M100 120 L115 170 L85 170 Z" fill="#d97706" />
-              <ellipse cx="100" cy="118" rx="18" ry="10" fill="#fef08a" />
-              <ellipse cx="100" cy="108" rx="16" ry="8" fill="#f9a8d4" />
+            <defs><linearGradient id="bg6" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fce7f3"/><stop offset="1" stop-color="#fde68a"/></linearGradient></defs>
+            <rect width="800" height="600" fill="url(#bg6)"/>
+            <rect x="110" y="360" width="580" height="26" rx="10" fill="#7c2d12"/>
+            <rect x="125" y="305" width="550" height="66" rx="14" fill="#a16207"/>
+            <text x="400" y="544" text-anchor="middle" font-family="Nunito" font-size="24" font-weight="800" fill="#831843">Double scoop. Double grin.</text>
+
+            <g transform="translate(220 190)">
+              <circle cx="56" cy="42" r="28" fill="#fecdd3"/>
+              <path d="M31 24 Q56 9 84 24" stroke="#be185d" stroke-width="10" fill="none"/>
+              <path d="M33 73 Q56 57 82 73 L82 155 Q56 170 33 155 Z" fill="#e11d48" stroke="#7f1d1d" stroke-width="2.5"/>
+              <path d="M100 98 L116 154 L86 154 Z" fill="#b45309"/>
+              <ellipse cx="101" cy="95" rx="18" ry="10" fill="#f9a8d4"/>
+              <ellipse cx="102" cy="84" rx="16" ry="8" fill="#fde68a"/>
             </g>
-            <!-- Alex -->
-            <g transform="translate(420 230)">
-              <rect x="10" y="70" width="62" height="82" rx="10" fill="#2563eb" />
-              <circle cx="41" cy="38" r="24" fill="#fdba74" />
-              <rect x="22" y="16" width="38" height="22" rx="11" fill="#f97316" />
-              <rect x="18" y="145" width="16" height="62" rx="5" fill="#1e3a5f" />
-              <rect x="48" y="145" width="16" height="62" rx="5" fill="#1e3a5f" />
-              <path d="M85 110 L100 165 L70 165 Z" fill="#d97706" />
-              <ellipse cx="85" cy="108" rx="16" ry="9" fill="#fef08a" />
-              <ellipse cx="85" cy="98" rx="14" ry="7" fill="#93c5fd" />
+
+            <g transform="translate(430 218)">
+              <circle cx="48" cy="33" r="24" fill="#fdba74"/>
+              <path d="M28 20 Q48 9 69 20" stroke="#ea580c" stroke-width="8" fill="none"/>
+              <path d="M31 58 Q48 45 67 58 L67 134 Q48 146 31 134 Z" fill="#2563eb" stroke="#1e3a8a" stroke-width="2.5"/>
+              <path d="M84 86 L100 142 L70 142 Z" fill="#b45309"/>
+              <ellipse cx="85" cy="84" rx="17" ry="10" fill="#93c5fd"/>
+              <ellipse cx="85" cy="74" rx="15" ry="8" fill="#fde68a"/>
             </g>
-            <text x="400" y="540" text-anchor="middle" font-family="Nunito" font-size="20" font-weight="700" fill="#831843">
-              Double scoop. Double grin.
-            </text>
           </svg>
         </div>
         <div class="copy">
           <h2>Ice cream, at last</h2>
-          <p>
-            The truck plays a tiny song that tastes like summer. Maya chooses strawberry-swirl
-            bravery; Alex picks blue moon because the sky should be a flavor. Sticky fingers, loud
-            laughter—proof that the best tricks end with sprinkles.
-          </p>
+          <p>Maya picks strawberry-swirl bravery. Alex picks blue moon sky. Sticky fingers, loud laughter, and a story worth retelling.</p>
         </div>
       </section>
     </main>
 
-    <p class="hint">
-      Tip: use <kbd>←</kbd> <kbd>→</kbd> keys. For PDF: <kbd>⌘</kbd>+<kbd>P</kbd> → Save as PDF.
-    </p>
-
-    <footer class="prototype-foot">
-      story-time prototype · generic characters (not from photos) · see repo GUARDRAILS.md for product rules
-    </footer>
-
+    <p class="hint">Tip: use <kbd>←</kbd> <kbd>→</kbd> keys. For PDF: <kbd>⌘</kbd>+<kbd>P</kbd> then Save as PDF.</p>
+    <footer class="prototype-foot">story-time prototype · generic characters (not from photos) · see GUARDRAILS.md</footer>
     <script src="book.js"></script>
   </body>
 </html>
